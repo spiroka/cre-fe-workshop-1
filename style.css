@@ -19,7 +19,6 @@ body {
 h1, h2, h3, h4, h5 {
   margin-bottom: 1em;
   color: darkmagenta;
-  font-size: 2em;
 }
 
 html {
@@ -89,6 +88,6 @@ main {
 }
 
 main section {
-  max-width: 600px;
+  width: min(600px, 100vw);
   margin-bottom: 50px;
 }
