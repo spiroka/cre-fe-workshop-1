@@ -1,3 +1,17 @@
+:root {
+  --color-primary-rgb: 139, 0, 139;
+  --color-primary: rgb(var(--color-primary-rgb));
+  --text-color: black;
+  --background-color: whitesmoke;
+  --background-color-light: white;
+}
+
+:root:has(nav .theme-toggle:checked) {
+  --text-color: white;
+  --background-color: black;
+  --background-color-light: dimgrey;
+}
+
 /*
  * Resets & base styles
  */
@@ -9,7 +23,7 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background-color: whitesmoke;
+  background-color: var(--background-color);
 }
 
 /*
@@ -18,11 +32,12 @@ body {
 
 h1, h2, h3, h4, h5 {
   margin-bottom: 1em;
-  color: darkmagenta;
+  color: var(--color-primary);
 }
 
 html {
   font-family: sans-serif;
+  color: var(--text-color);
 }
 
 /*
@@ -39,7 +54,7 @@ nav {
   align-items: center;
   height: 3.5em;
   justify-content: space-around;
-  background: white;
+  background: var(--background-color-light);
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.1);
 }
 
@@ -59,7 +74,7 @@ nav ul li {
 .banner img {
   border-radius: 1.5rem;
   transform: translateX(70px);
-  box-shadow: 5px 20px 35px 5px rgba(139,0,139,0.3);
+  box-shadow: 5px 20px 35px 5px rgba(var(--color-primary-rgb), 0.3);
 }
 
 .banner {
@@ -69,7 +84,7 @@ nav ul li {
   justify-content: space-around;
   max-width: 800px;
   margin: 50px 20px 100px;
-  background-color: white;
+  background-color: var(--background-color-light);
   padding: 2rem;
   border-radius: 1.5rem;
 }
