@@ -92,3 +92,8 @@ main section {
   width: min(600px, 100vw);
   margin-bottom: 50px;
 }
+
+.cat-names h3 {
+  position: sticky;
+  top: 10px;
+}
