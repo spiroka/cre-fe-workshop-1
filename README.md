@@ -7,3 +7,14 @@ Usage:
 ```shell
 npx live-server .
 ```
+
+# Tasks
+
+## 1. 🪲BUG🪲 Banner text doesn't scale with browser font size setting.
+
+**Expected behaviour**: text should get get bigger/smaller according to the browser font size setting.
+**Actual behaviour**: banner text size is unchanged after modifying browser font size.
+
+## 2. 🚀FEATURE🚀 Current letter should stick to the top of the screen when scrolling through cat names.
+
+## 3. 🚀FEATURE🚀 Add a dark mode to the site.
