@@ -16,7 +16,14 @@ npx live-server .
 
 **Actual behaviour**: banner text size is unchanged after modifying browser font size.
 
+*The solution is available on branch `task-1`.*
+
 
 ### 2. 🚀FEATURE🚀 Current letter should stick to the top of the screen when scrolling through cat names.
 
+*The solution is available on branch `task-2`.*
+
+
 ### 3. 🚀FEATURE🚀 Add a dark mode to the site.
+
+*The solution is available on branch `task-3`.*
