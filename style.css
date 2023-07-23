@@ -1,3 +1,17 @@
+:root {
+  --color-primary-rgb: 139,0,139;
+  --color-primary: rgb(var(--color-primary-rgb));
+  --background-color: white;
+  --background-color-dark: whitesmoke;
+  --text-color: black;
+}
+
+:root:has(nav #color-scheme-toggle:checked) {
+  --background-color: dimgrey;
+  --background-color-dark: black;
+  --text-color: white;
+}
+
 /*
  * Resets & base styles
  */
@@ -9,7 +23,8 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background-color: whitesmoke;
+  background-color: var(--background-color-dark);
+  color: var(--text-color);
 }
 
 /*
@@ -18,7 +33,7 @@ body {
 
 h1, h2, h3, h4, h5 {
   margin-bottom: 1em;
-  color: darkmagenta;
+  color: var(--color-primary);
 }
 
 html {
@@ -39,7 +54,7 @@ nav {
   align-items: center;
   height: 3.5em;
   justify-content: space-around;
-  background: white;
+  background: var(--background-color);
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.1);
 }
 
@@ -54,12 +69,43 @@ nav ul {
 nav ul li {
   display: inline-block;
   padding: 1em;
+  overflow: hidden;
+}
+
+#color-scheme-toggle {
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  width: 5em;
+  height: 2em;
+  transform: translateY(0.6em);
+  background: var(--background-color-dark);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3) inset;
+  border-radius: 1em;
+}
+
+#color-scheme-toggle::after {
+  position: absolute;
+  top: 0.1em;
+  transition: all 0.2s;
+  font-size: 1.3em;
+}
+
+#color-scheme-toggle:checked::after {
+  content: '🐈';
+  left: 2.25em;
+}
+
+#color-scheme-toggle:not(:checked)::after {
+  content: '🐈‍⬛';
+  left: 0.6em;
 }
 
 .banner img {
   border-radius: 1.5rem;
   transform: translateX(70px);
-  box-shadow: 5px 20px 35px 5px rgba(139,0,139,0.3);
+  box-shadow: 5px 20px 35px 5px rgba(var(--color-primary-rgb),0.3);
 }
 
 .banner {
@@ -69,13 +115,13 @@ nav ul li {
   justify-content: space-around;
   max-width: 800px;
   margin: 50px 20px 100px;
-  background-color: white;
+  background-color: var(--background-color);
   padding: 2rem;
   border-radius: 1.5rem;
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 /*
@@ -91,4 +137,9 @@ main {
 main section {
   width: min(600px, 100vw);
   margin-bottom: 50px;
+}
+
+.cat-names h3 {
+  position: sticky;
+  top: 0;
 }
